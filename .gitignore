@@ -1,0 +1,14 @@
+﻿.idea
+.fleet
+.vscode
+*.BridgeLabelsAndRatings
+log
+projects
+temp
+vendor/WE/backups
+vendor/WE/logs
+vendor/WE/plugin/warcraft3/dzclient_api.ini
+vendor/w3x2lni/log
+assets
+assetsNew
+vendor

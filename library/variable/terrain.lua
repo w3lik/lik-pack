@@ -1,0 +1,18 @@
+-- 地形类型（这里只写默认的16个，如果你改动了地形，请自行补充）
+-- 对应地形样式取决于we内配置的16个样式
+TERRAIN_LORDS_DIRT = J.C2I("Ldrt") -- 洛丹伦(夏) 泥地 [泥土]
+TERRAIN_LORDS_DIRTROUGH = J.C2I("Ldro")  -- 洛丹伦(夏) 坑洼的泥土 [遗迹地砖]
+TERRAIN_LORDS_DIRTGRASS = J.C2I("Ldrg")  -- 洛丹伦(夏) 草色泥土 [沙地]
+TERRAIN_LORDS_ROCK = J.C2I("Lrok")  -- 洛丹伦(夏) 岩石 [黑冰]
+TERRAIN_LORDS_GRASS = J.C2I("Lgrs")  -- 洛丹伦(夏) 草地 [白雪]
+TERRAIN_LORDS_GRASSDARK = J.C2I("Lgrd")  -- 洛丹伦(夏) 深色草地 [森林]
+TERRAIN_CITY_DIRTROUGH = J.C2I("Ydtr")  -- 城邦 坑洼的泥土 [秋草]
+TERRAIN_CITY_BLACKMARBLE = J.C2I("Yblm")  -- 城邦 黑色大理石 [黄土]
+TERRAIN_CITY_BRICKTILES = J.C2I("Ybtl")  -- 城邦 砖 [红色地砖]
+TERRAIN_CITY_ROUNDTILES = J.C2I("Yrtl")  -- 城邦 圆形地形 [火焰]
+TERRAIN_CITY_GRASS = J.C2I("Ygsb")  -- 城邦 草地 [青草]
+TERRAIN_CITY_GRASSTRIM = J.C2I("Yhdg")  -- 城邦 平整草地 [败草]
+TERRAIN_CITY_WHITEMARBLE = J.C2I("Ywmb")  -- 城邦 白色大理石 [熔岩]
+TERRAIN_DALARAN_DIRTROUGH = J.C2I("Xdtr")  -- 达拉然 坑洼的泥土 [荒地]
+TERRAIN_DALARAN_BLACKMARBLE = J.C2I("Xblm")  -- 达拉然 黑色大理石 [藤蔓]
+TERRAIN_DALARAN_BRICKTILES = J.C2I("Xbtl")  -- 达拉然 砖 [蓝冰]

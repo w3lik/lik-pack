@@ -1,0 +1,337 @@
+[
+  {
+    "file": "common/colour",
+    "repl": "^(colour\\.\\w+) = |^function (colour\\.\\w+)\\(",
+    "del": "colour = colour or {}"
+  },
+  {
+    "file": "common/curve",
+    "repl": "^function (curve\\.\\w+)\\(",
+    "del": "curve = curve or {}"
+  },
+  {
+    "file": "common/datum",
+    "repl": "^(datum\\._\\w+) = |^function (datum\\.\\w+)\\(",
+    "del": "datum = datum or {}"
+  },
+  {
+    "file": "common/math",
+    "repl": "^(math\\._\\w+) = |^function (math\\.\\w+)\\(",
+    "del": ""
+  },
+  {
+    "file": "common/matrix",
+    "repl": "^(matrix\\._\\w+) = |^function (matrix\\.\\w+)\\(",
+    "del": "matrix = matrix or {}"
+  },
+  {
+    "file": "common/mbstring",
+    "repl": "^function (mbstring\\.\\w+)\\(",
+    "del": "mbstring = mbstring or {}"
+  },
+  {
+    "file": "common/string",
+    "repl": "^(string\\._\\w+) = |^function (string\\.\\w+)\\(",
+    "del": ""
+  },
+  {
+    "file": "common/table",
+    "repl": "^function (table\\.\\w+)\\(",
+    "del": ""
+  },
+  {
+    "file": "japi/_japi",
+    "repl": "^(japi\\.\\w+) = |^function (japi\\.\\w+)\\(",
+    "del": "japi = japi or {}"
+  },
+  {
+    "file": "japi/dz",
+    "repl": "^function (japi\\.\\w+)\\(",
+    "del": ""
+  },
+  {
+    "file": "japi/kk",
+    "repl": "^function (japi\\.\\w+)\\(",
+    "del": ""
+  },
+  {
+    "file": "japi/lk",
+    "repl": "^(japi\\.\\w+) = |^function (japi\\.\\w+)\\(",
+    "del": ""
+  },
+  {
+    "file": "japi/yd",
+    "repl": "^function (japi\\.\\w+)\\(",
+    "del": ""
+  },
+  {
+    "file": "ability/_base",
+    "repl": "^function (ability\\.\\w+)\\(",
+    "del": "ability = ability or {}"
+  },
+  {
+    "file": "ability/crackFly",
+    "repl": "^function (ability\\.\\w+)\\(",
+    "del": ""
+  },
+  {
+    "file": "ability/crit",
+    "repl": "^function (ability\\.\\w+)\\(",
+    "del": ""
+  },
+  {
+    "file": "ability/damage",
+    "repl": "^function (ability\\.\\w+)\\(",
+    "del": ""
+  },
+  {
+    "file": "ability/freeze",
+    "repl": "^function (ability\\.\\w+)\\(",
+    "del": ""
+  },
+  {
+    "file": "ability/invisible",
+    "repl": "^function (ability\\.\\w+)\\(",
+    "del": ""
+  },
+  {
+    "file": "ability/invulnerable",
+    "repl": "^function (ability\\.\\w+)\\(",
+    "del": ""
+  },
+  {
+    "file": "ability/leap",
+    "repl": "^function (ability\\.\\w+)\\(",
+    "del": ""
+  },
+  {
+    "file": "ability/lightningChain",
+    "repl": "^function (ability\\.\\w+)\\(",
+    "del": ""
+  },
+  {
+    "file": "ability/missile",
+    "repl": "^function (ability\\.\\w+)\\(",
+    "del": ""
+  },
+  {
+    "file": "ability/parry",
+    "repl": "^function (ability\\.\\w+)\\(",
+    "del": ""
+  },
+  {
+    "file": "ability/reborn",
+    "repl": "^function (ability\\.\\w+)\\(",
+    "del": ""
+  },
+  {
+    "file": "ability/sight",
+    "repl": "^function (ability\\.\\w+)\\(",
+    "del": ""
+  },
+  {
+    "file": "ability/silent",
+    "repl": "^function (ability\\.\\w+)\\(",
+    "del": ""
+  },
+  {
+    "file": "ability/split",
+    "repl": "^function (ability\\.\\w+)\\(",
+    "del": ""
+  },
+  {
+    "file": "ability/stun",
+    "repl": "^function (ability\\.\\w+)\\(",
+    "del": ""
+  },
+  {
+    "file": "ability/unArm",
+    "repl": "^function (ability\\.\\w+)\\(",
+    "del": ""
+  },
+  {
+    "file": "ability/visible",
+    "repl": "^function (ability\\.\\w+)\\(",
+    "del": ""
+  },
+  {
+    "file": "ability/whirlwind",
+    "repl": "^function (ability\\.\\w+)\\(",
+    "del": ""
+  },
+  {
+    "file": "foundation/alerter",
+    "repl": "^function (alerter\\.\\w+)\\(",
+    "del": "alerter = alerter or {}"
+  },
+  {
+    "file": "foundation/alliance",
+    "repl": "^function (alliance\\.\\w+)\\(",
+    "del": "alliance = alliance or {}"
+  },
+  {
+    "file": "foundation/assets",
+    "repl": "^function (assets\\.\\w+)\\(",
+    "del": "assets = assets or {}"
+  },
+  {
+    "file": "foundation/async",
+    "repl": "^(async\\._\\w+) = |^function (async\\.\\w+)\\(",
+    "del": "async = async or {}"
+  },
+  {
+    "file": "foundation/attribute",
+    "repl": "^(attribute\\._\\w+) = |^function (attribute\\.\\w+)\\(",
+    "del": "attribute = attribute or {}"
+  },
+  {
+    "file": "foundation/audio",
+    "repl": "^function (audio)\\(",
+    "del": ""
+  },
+  {
+    "file": "foundation/buff",
+    "repl": "^(buff\\._\\w+) = |^function (buff\\.\\w+)\\(",
+    "del": "buff = buff or {}"
+  },
+  {
+    "file": "foundation/camera",
+    "repl": "^function (camera\\.\\w+)\\(",
+    "del": "camera = camera or {}"
+  },
+  {
+    "file": "foundation/cursor",
+    "repl": "^(cursor\\.\\w+) = |^function (cursor\\.\\w+)\\(",
+    "del": "cursor = cursor or {}"
+  },
+  {
+    "file": "foundation/destructable",
+    "repl": "^(destructable\\._\\w+) = |^function (destructable\\.\\w+)\\(",
+    "del": "destructable = destructable or {}"
+  },
+  {
+    "file": "foundation/dialog",
+    "repl": "^(dialog\\._\\w+) = |^function (dialog\\.\\w+)\\(",
+    "del": "dialog = dialog or {}"
+  },
+  {
+    "file": "foundation/echo",
+    "repl": "^function (echo)\\(",
+    "del": ""
+  },
+  {
+    "file": "foundation/effector",
+    "repl": "^function (effector)\\(",
+    "del": ""
+  },
+  {
+    "file": "foundation/enchant",
+    "repl": "^(enchant\\._\\w+) = |^function (enchant\\.\\w+)\\(",
+    "del": "enchant = enchant or {}"
+  },
+  {
+    "file": "foundation/event",
+    "repl": "^(event\\._\\w+) = |^function (event\\.\\w+)\\(",
+    "del": "event = event or {}"
+  },
+  {
+    "file": "foundation/injury",
+    "repl": "^function (injury\\.\\w+)\\(",
+    "del": "injury = injury or {}"
+  },
+  {
+    "file": "foundation/keyboard",
+    "repl": "^function (keyboard\\.\\w+)\\(",
+    "del": "keyboard = keyboard or {}"
+  },
+  {
+    "file": "foundation/lightning",
+    "repl": "^function (lightning)\\(",
+    "del": ""
+  },
+  {
+    "file": "foundation/mouse",
+    "repl": "^function (mouse\\.\\w+)\\(",
+    "del": "mouse = mouse or {}"
+  },
+  {
+    "file": "foundation/player",
+    "repl": "^(player\\._\\w+) = ",
+    "del": "player = player or {}"
+  },
+  {
+    "file": "foundation/slk",
+    "repl": "^function (slk\\.\\w+)\\(",
+    "del": "slk = slk or {}"
+  },
+  {
+    "file": "foundation/sync",
+    "repl": "^(sync\\._\\w+) = |^function (sync\\.\\w+)\\(",
+    "del": "sync = sync or {}"
+  },
+  {
+    "file": "foundation/terrain",
+    "repl": "^function (terrain\\.\\w+)\\(",
+    "del": "terrain = terrain or {}"
+  },
+  {
+    "file": "foundation/time",
+    "repl": "^(time\\._\\w+) = |^function (time\\.\\w+)\\(",
+    "del": "time = time or {}"
+  },
+  {
+    "file": "foundation/ttg",
+    "repl": "^(ttg\\._\\w+) = |^function (ttg\\.\\w+)\\(",
+    "del": "ttg = ttg or {}"
+  },
+  {
+    "file": "foundation/view",
+    "repl": "^function (view\\.\\w+)\\(",
+    "del": "view = view or {}"
+  },
+  {
+    "file": "variable/event",
+    "repl": "^(EVENT\\.\\w+) = ",
+    "del": "EVENT = EVENT or {}"
+  },
+  {
+    "file": "variable/font",
+    "repl": "^([A-Z_]+) = ",
+    "del": ""
+  },
+  {
+    "file": "variable/keyboard",
+    "repl": "^([A-Z_]+) = ",
+    "del": ""
+  },
+  {
+    "file": "variable/prop",
+    "repl": "^([A-Z_]+) = ",
+    "del": ""
+  },
+  {
+    "file": "variable/sound",
+    "repl": "^([A-Z_]+) = ",
+    "del": ""
+  },
+  {
+    "file": "variable/terrain",
+    "repl": "^([A-Z_]+) = ",
+    "del": ""
+  },
+  {
+    "file": "variable/texture",
+    "repl": "^([A-Z_]+) = ",
+    "del": ""
+  },
+  {
+    "file": "variable/weather",
+    "repl": "^(WEATHER_TYPE\\.\\w+) = ",
+    "del": "WEATHER_TYPE = WEATHER_TYPE or {}"
+  },
+  {
+    "file": "variable/trade",
+    "repl": "^([A-Z_]+) = ",
+    "del": ""
+  }
+]
