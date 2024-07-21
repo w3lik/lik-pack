@@ -62,7 +62,7 @@ function sync.send(key, data)
     async.must()
     if (key) then
         local aid = async._id
-        if (Game():playingQuantityStart() == 1) then
+        if (Game():playingQuantityStart() > 1) then
             must(aid > 0)
             aid = tostring(aid)
             if (sync._queue[aid] == nil) then
