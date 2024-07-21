@@ -107,7 +107,7 @@ function FRAMEWORK_INIT()
     for i = 0, 3 do
         FrameTooltips(i)
     end
-    
+
 end
 
 --- 游戏开始
@@ -175,7 +175,7 @@ Game():onEvent(EVENT.Game.Start, "gameStart_", function()
             local itId = syncData.transferData[2]
             ---@type Item
             local it = i2o(itId)
-            if (isClass(it, ItemClass)) then
+            if (isClass(it, ItemClass) and it:pawnable()) then
                 it:pawn()
             end
         elseif (command == "item_drop") then
@@ -184,7 +184,7 @@ Game():onEvent(EVENT.Game.Start, "gameStart_", function()
             local my = tonumber(syncData.transferData[4])
             ---@type Item
             local it = i2o(itId)
-            if (isClass(it, ItemClass)) then
+            if (isClass(it, ItemClass) and it:dropable()) then
                 it:drop(mx, my)
             end
         elseif (command == "item_drop_cursor") then
@@ -196,7 +196,7 @@ Game():onEvent(EVENT.Game.Start, "gameStart_", function()
             local my = tonumber(syncData.transferData[4])
             ---@type Item
             local it = i2o(itId)
-            if (isClass(it, ItemClass)) then
+            if (isClass(it, ItemClass) and it:dropable()) then
                 local eff
                 if (syncPlayer:handle() == J.Common["GetLocalPlayer"]()) then
                     eff = 'UI\\Feedback\\Confirmation\\Confirmation.mdl'
@@ -216,7 +216,7 @@ Game():onEvent(EVENT.Game.Start, "gameStart_", function()
             local it = i2o(itId)
             ---@type Unit
             local u = i2o(uId)
-            if (isClass(it, ItemClass) and isClass(u, UnitClass)) then
+            if (isClass(it, ItemClass) and it:dropable() and isClass(u, UnitClass)) then
                 if (u:isAlive()) then
                     local mx, my = u:x(), u:y()
                     local eff
