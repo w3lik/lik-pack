@@ -184,12 +184,10 @@ function ability.castStart(whichAbility, triggerUnit, evtData)
     event.syncTrigger(triggerUnit, EVENT.Unit.Ability.Effective, evtData) --触发单位施放了技能
     local ck = whichAbility:castKeep()
     if (ck > 0) then
-        whichAbility:ban("castKeep")
         triggerUnit:superposition("pause", "+=1")
         triggerUnit:prop("abilityCastRevert", function(isInterrupt)
             triggerUnit:clear("abilityCastRevert")
             triggerUnit:clear("abilityKeepTimer", true)
-            whichAbility:allow("castKeep")
             triggerUnit:superposition("pause", "-=1")
             if (isInterrupt) then
                 ability.castStop(whichAbility, triggerUnit, evtData)
@@ -286,7 +284,6 @@ function ability.effective(whichAbility, evtData)
         cc = whichAbility:castChant()
     end
     if (cc > 0) then
-        whichAbility:ban("castChant")
         triggerUnit:superposition("pause", "+=1")
         local ca = triggerUnit:castAnimation() or whichAbility:castAnimation()
         if (ca) then
@@ -299,7 +296,6 @@ function ability.effective(whichAbility, evtData)
         triggerUnit:prop("abilityCastRevert", function(isInterrupt)
             triggerUnit:clear("abilityCastRevert")
             triggerUnit:clear("abilityChantTimer", true)
-            whichAbility:allow("castChant")
             triggerUnit:animateScale(animateScale)
             triggerUnit:superposition("pause", "-=1")
             if (isInterrupt) then

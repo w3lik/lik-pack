@@ -127,68 +127,41 @@ function class:coolDownRemain()
 end
 
 --- 技能不能使用的原因
----@return Array|boolean|nil
-function class:prohibit(key, modify)
-    ---@type Array|nil
-    local p = self:prop("prohibit")
-    if (key == nil) then
-        return p
-    end
-    if (isClass(p, ArrayClass)) then
-        if (modify == nil) then
-            return p:get(key) or false
-        end
-        p:set(key, modify)
-    end
-end
-
---- 技能不能使用的原因
 ---@return string|nil
 function class:prohibitReason()
-    local reason
-    if (self:prohibit("castChant") == true) then
-        reason = "吟唱中"
+    local bu = self:bindUnit()
+    if (isClass(bu, UnitClass)) then
+        if (bu:isAbilityChantCasting()) then
+            return "吟唱中"
+        end
+        if (bu:isAbilityKeepCasting()) then
+            return "施法中"
+        end
     end
-    if (self:prohibit("castKeep") == true) then
-        reason = "施法中"
+    if (self:isCooling()) then
+        return "冷却中"
     end
-    if (self:prohibit("coolDown") == true) then
-        reason = "冷却中"
-    end
+    local advRe
     local costAdv = self:prop("costAdv")
     if (isClass(costAdv, ArrayClass)) then
         costAdv:forEach(function(k, v)
-            if (self:prohibit(k) == true) then
-                reason = v.reason or (string.upper(k) .. "不足")
+            if (true ~= v.cond(self)) then
+                advRe = v.reason or (string.upper(k) .. "不足")
+                return false
             end
         end)
     end
-    if (self:prohibit("stun") == true) then
-        reason = "被眩晕"
+    if (advRe ~= nil) then
+        return advRe
     end
-    if (self:prohibit("silent") == true) then
-        reason = "被沉默"
+    if (isClass(bu, UnitClass)) then
+        if (bu:isStunning()) then
+            return "被眩晕"
+        end
+        if (bu:isSilencing()) then
+            return "被沉默"
+        end
     end
-    return reason
-end
-
---- 禁用技能
----@param reason string
----@return self
-function class:ban(reason)
-    self:prohibit(reason, true)
-    return self
-end
-
---- 允许技能
----@param reason string
----@return self
-function class:allow(reason)
-    local p = self:prohibit()
-    if (isClass(p, ArrayClass)) then
-        p:set(reason, nil)
-    end
-    return self
 end
 
 --- 技能当前经验
@@ -223,10 +196,8 @@ function class:coolingEnter()
         if (isClass(coolDownTimer, TimerClass)) then
             self:clear("coolDownTimer", true)
         end
-        self:ban("coolDown")
         self:prop("coolDownTimer", time.setTimeout(cd, function()
             self:clear("coolDownTimer")
-            self:allow("coolDown")
         end))
     end
 end
@@ -243,62 +214,15 @@ end
 --- 是否冷却中
 ---@return boolean
 function class:isCooling()
-    return self:prohibit("coolDown") == true
+    local t = self:coolDownTimer()
+    return isClass(t, TimerClass) and t:remain() > 0
 end
 
 --- 技能是否处于禁用状态
 ---@return boolean
 function class:isProhibiting()
-    local bu = self:bindUnit()
-    ---@type Array|nil
-    local ph = self:prohibit()
-    if (ph == nil) then
-        return true
-    end
-    local count = ph:count()
-    if (isClass(bu, UnitClass)) then
-        if (bu:isStunning()) then
-            self:ban("stun")
-        else
-            self:allow("stun")
-        end
-        if (bu:isCrackFlying()) then
-            self:ban("crackFly")
-        else
-            self:allow("crackFly")
-        end
-        if (bu:isLeaping()) then
-            self:ban("leap")
-        else
-            self:allow("leap")
-        end
-        if (bu:isWhirlwind()) then
-            self:ban("whirlwind")
-        else
-            self:allow("whirlwind")
-        end
-        if (bu:isSilencing()) then
-            self:ban("silent")
-        else
-            self:allow("silent")
-        end
-        local costAdv = self:prop("costAdv")
-        if (isClass(costAdv, ArrayClass)) then
-            costAdv:forEach(function(k, v)
-                if (v.cond(self) == true) then
-                    self:allow(k)
-                else
-                    self:ban(k)
-                end
-            end)
-        end
-    elseif (count > 0) then
-        ph:construct()
-        count = 0
-    end
-    local status = count > 0
-    self:prop("prohibiting", status)
-    return status
+    local br = self:prohibitReason()
+    return type(br) == "string"
 end
 
 --- 是否施法目标允许

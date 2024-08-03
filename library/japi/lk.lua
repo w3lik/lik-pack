@@ -460,6 +460,7 @@ function japi.MouseRX()
     end
     return japi.RX(japi.DZ_GetMouseXRelative())
 end
+
 --- 鼠标Y像素 转 比例
 ---@return number
 function japi.MouseRY()

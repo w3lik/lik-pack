@@ -188,7 +188,7 @@ function view.frame2Mouse(whichFrame, evt, show, ...)
                     mouse.onMove("frameLeave_", nil)
                 end
                 if (firstKey == ek) then
-                    ---@param evtData noteOnMouseEventMoveData
+                    ---@param evtData evtOnMouseMoveData
                     mouse.onMove("frameLeave_", function(evtData)
                         if (whichFrame:isBorder()) then
                             mouse.onMove("frameLeave_", nil)
