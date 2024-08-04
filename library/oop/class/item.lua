@@ -97,7 +97,7 @@ function class:onUnitEvent(evt, ...)
         key = self:id() .. evt
         callFunc = opt[1]
     elseif (type(opt[1]) == "string" and type(opt[2]) == "function") then
-        key = self:id() .. opt[1]
+        key = self:id() .. evt .. opt[1]
         callFunc = opt[2]
     end
     if (key ~= nil) then
