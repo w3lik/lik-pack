@@ -5,7 +5,6 @@ local class = Class(AbilityClass):extend(AbilityFuncClass)
 function class:construct(options)
     options.tpl:cover(self)
     self:prop("tpl", options.tpl)
-    self:prop("prohibit", Array())
     self:prop("exp", 0)
     --- TPL事件注册
     if (type(self:prop("onEvent")) == "table") then
@@ -33,7 +32,6 @@ function class:destruct()
             slot:remove(self:abilitySlotIndex())
         end
     end
-    self:clear("prohibit", true)
     self:clear("abilitySlotIndex")
     self:clear("bindUnit")
     self:clear("bindItem")
